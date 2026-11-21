@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+@keyframes brand-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-marquee {
+  animation: brand-marquee 30s linear infinite;
+}
