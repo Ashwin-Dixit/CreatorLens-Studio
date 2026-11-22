@@ -1,5 +1,6 @@
+
 export const stitchImages = {
-  logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHHpO1_9PYmY-hBMVIzyzpyEy83o2UW40yUqug1KgHcUGJcMCEo5-32pi4-_f8_iEcOzYOSYoFG3ISA-djgAz24MrR_Mztn_Nyw34_JtbSi1gosFFVNb_52pu2-aXxDAgFSpsLCAp1Le2UXO0stq3SdD4iVKlAd4_4MaDiRmzaND1jFzILkGPyZIXUzLEg7db7VK5icuZUO2Uky-7ZLIPASEos3wTlQydAaRSvCg',
+  logo: './images/creatorlens logo.png',
   creativeDirector: './images/creativeDirector.jpg',
   skincare: './images/skincare.jpg',
   fragrance: './images/fragrance.jpg',
@@ -12,45 +13,6 @@ export const stitchImages = {
   production: './images/production.jpg',
 }
 
-export const services = [
-  {
-    icon: '♧',
-    title: 'Influencer Marketing',
-    description: 'Creator discovery, end-to-end campaign operations, authentic talent partnerships, and rigorous attribution reporting.',
-    detailedDescription: 'We identify creators whose audiences and values align with your brand, manage outreach and campaign logistics, and give each partnership a clear creative brief. After launch, we track deliverables and campaign results to understand what resonated and where to focus next.',
-  },
-  {
-    icon: '▣',
-    title: 'UGC',
-    description: 'High-converting, creator-led videos and photos designed specifically for organic reach, Spark Ads, and Meta Whitelisting.',
-    detailedDescription: 'We plan and produce creator-led videos and photography that make your product feel natural in a social feed. Each asset is shaped around a clear hook, relatable storytelling, and platform-specific formats, giving your team versatile content for organic posts and paid campaigns.',
-    featured: true,
-  },
-  {
-    icon: '◌',
-    title: 'Social Media Management',
-    description: 'Channel strategy, content calendars, community engagement, and performance reporting across the platforms that matter most.',
-    detailedDescription: 'We build an end-to-end social operating system for your brand: planning the content mix, scheduling publication, managing audience interactions, and turning performance signals into smarter creative decisions that keep your channels active and strategic.',
-  },
-  {
-    icon: '▦',
-    title: 'Social Media Marketing',
-    description: 'Strategic planning, content calendars, platform curation, and community growth tailored to current algorithmic realities.',
-    detailedDescription: 'We shape a channel strategy around your audience, goals, and brand voice, then turn it into a practical publishing calendar. From platform selection and content direction to community engagement, we refine the approach using performance signals so your social presence grows with purpose.',
-  },
-  {
-    icon: '◉',
-    title: 'Content Production',
-    description: 'Bespoke studio product photography, on-location lifestyle shoots, high-fashion short films, and multi-format campaign assets.',
-    detailedDescription: 'We bring campaigns to life with considered production, from studio product photography to on-location lifestyle shoots and short-form film. Our team coordinates the creative direction, shoot details, and final formats so the finished assets feel cohesive across your channels.',
-  },
-  {
-    icon: '↗',
-    title: 'Brand Shoots',
-    description: 'Editorial product, founder, and lifestyle imagery designed to give your brand a premium, recognizable visual identity.',
-    detailedDescription: 'We direct elevated brand shoots that balance polish with personality, capturing product details, founder stories, and aspirational lifestyle moments in a cohesive visual language. The resulting imagery is built to support campaigns, paid creative, website content, and social storytelling without losing authenticity.',
-  },
-]
 
 export const workSamples = [
   {

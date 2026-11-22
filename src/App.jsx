@@ -1,29 +1,53 @@
 import { useState, useRef } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import {LoaderCircle} from 'lucide-react'
+import {LoaderCircle, Users, CalendarDays, Clapperboard, Megaphone, Video, Camera} from 'lucide-react'
 import {
   workSamples,
-  // insights,
-  services,
   stitchImages,
 } from './data/content.js'
 import {submitQuestion, submitRequest} from "./services/requestService.js"
 import { CaseStudyCard, SectionHeading, ServiceCard } from './components/ContentCards.jsx'
 import { SiteFooter, SiteHeader } from './components/SiteChrome.jsx'
 
-const principles = [
-  ['01', 'Strategy before noise', 'We begin with clear commercial hypotheses, audience insight, and goals worth measuring.'],
-  ['02', 'Creativity with purpose', 'Distinctive ideas work harder when every detail has a reason to exist.'],
-  ['03', 'People over impressions', 'Real creator voices build the trust and connection that audiences remember.'],
+const services = [
+  {
+    icon: <Users />,
+    title: 'Influencer Marketing',
+    description: 'Creator discovery, end-to-end campaign operations, authentic talent partnerships, and rigorous attribution reporting.',
+    detailedDescription: 'We identify creators whose audiences and values align with your brand, manage outreach and campaign logistics, and give each partnership a clear creative brief. After launch, we track deliverables and campaign results to understand what resonated and where to focus next.',
+  },
+  {
+    icon: <Clapperboard />,
+    title: 'UGC',
+    description: 'High-converting, creator-led videos and photos designed specifically for organic reach, Spark Ads, and Meta Whitelisting.',
+    detailedDescription: 'We plan and produce creator-led videos and photography that make your product feel natural in a social feed. Each asset is shaped around a clear hook, relatable storytelling, and platform-specific formats, giving your team versatile content for organic posts and paid campaigns.',
+    featured: true,
+  },
+  {
+    icon: <CalendarDays />,
+    title: 'Social Media Management',
+    description: 'Channel strategy, content calendars, community engagement, and performance reporting across the platforms that matter most.',
+    detailedDescription: 'We build an end-to-end social operating system for your brand: planning the content mix, scheduling publication, managing audience interactions, and turning performance signals into smarter creative decisions that keep your channels active and strategic.',
+  },
+  {
+    icon: <Megaphone />,
+    title: 'Social Media Marketing',
+    description: 'Strategic planning, content calendars, platform curation, and community growth tailored to current algorithmic realities.',
+    detailedDescription: 'We shape a channel strategy around your audience, goals, and brand voice, then turn it into a practical publishing calendar. From platform selection and content direction to community engagement, we refine the approach using performance signals so your social presence grows with purpose.',
+  },
+  {
+    icon: <Video />,
+    title: 'Content Production',
+    description: 'Bespoke studio product photography, on-location lifestyle shoots, high-fashion short films, and multi-format campaign assets.',
+    detailedDescription: 'We bring campaigns to life with considered production, from studio product photography to on-location lifestyle shoots and short-form film. Our team coordinates the creative direction, shoot details, and final formats so the finished assets feel cohesive across your channels.',
+  },
+  {
+    icon: <Camera />,
+    title: 'Brand Shoots',
+    description: 'Editorial product, founder, and lifestyle imagery designed to give your brand a premium, recognizable visual identity.',
+    detailedDescription: 'We direct elevated brand shoots that balance polish with personality, capturing product details, founder stories, and aspirational lifestyle moments in a cohesive visual language. The resulting imagery is built to support campaigns, paid creative, website content, and social storytelling without losing authenticity.',
+  },
 ]
-
-const processSteps = [
-  ['01', 'Discover', 'We get to know your brand, audience, category, and the opportunity in front of you.', 'Sprint week 01'],
-  ['02', 'Strategize', 'We shape the creative direction, campaign plan, creator mix, and clear success measures.', 'Sprint week 02'],
-  ['03', 'Create', 'Our team and creators bring the brief to life with thoughtful, platform-native content.', 'Sprint weeks 03–04'],
-  ['04', 'Optimize', 'We learn from real performance, refine what works, and scale the strongest ideas.', 'Ongoing'],
-]
-
 const questions = [
   ['What does a typical UGC package include?', 'A typical sprint includes a tailored creative brief, creator-led video and photo assets, a range of hook variations, and platform-ready files. Scope and usage are agreed together before production begins.'],
   ['How do you find the right creators?', 'We match creators to your audience, values, and visual direction, then review their content and audience fit before making an introduction.'],
@@ -183,9 +207,9 @@ function HomePage() {
                 {[0, 1].map((copy) => (
                   <div className="flex shrink-0 items-center gap-16 pr-16 text-[#223343] max-[560px]:gap-9 max-[560px]:pr-9" key={copy} aria-hidden={copy === 1}>
                     <span className="text-[.62rem] font-semibold uppercase tracking-[.14em] text-[#75837b] max-[560px]:text-[.55rem]">Lifestyle |</span>
-                    <img src="/images/mamaearth.png" alt="mamaearth" className="h-4 w-auto object-contain max-[560px]:h-6" />
+                    <img src="/images/mamaearth.png" alt="mamaearth" className="h-4 w-auto object-contain max-[560px]:h-4" />
                     <span className="text-[.62rem] font-semibold uppercase tracking-[.14em] text-[#75837b] max-[560px]:text-[.55rem]">Skin Care |</span>
-                    <img src="/images/ponds.png" alt="Ponds" className="h-5 w-auto object-contain max-[560px]:h-6" />
+                    <img src="/images/ponds.png" alt="Ponds" className="h-5 w-auto object-contain max-[560px]:h-5" />
                     <span className="font-display text-xl italic max-[560px]:text-base">Hola Hoop</span>
                     <span className="text-[.62rem] font-semibold uppercase tracking-[.14em] text-[#75837b] max-[560px]:text-[.55rem]">Protein |</span>
                     <img src="/images/muscle blaze.png" alt="Muscle Blaze" className="h-6 w-auto object-contain max-[560px]:h-6" />
@@ -298,18 +322,18 @@ function HomePage() {
           <div className="pointer-events-none absolute -bottom-24 -right-20 h-96 w-96 rounded-full bg-[#b69a50]/20 blur-3xl" />
           <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-10 max-[800px]:grid-cols-1 max-[800px]:gap-8">
             <div className="col-span-7 max-[800px]:col-span-1">
-              <p className="mb-4 text-[.64rem] font-bold uppercase tracking-[.17em] text-[#b0ecfb]">For creators</p>
+              <p className="mb-4 text-[.64rem] font-bold uppercase tracking-[.17em] text-[#b0ecfb]">For Brands</p>
               <h2 className="m-0 max-w-[42rem] text-[clamp(2.3rem,4.5vw,4.2rem)] font-semibold leading-[1.08] tracking-[-.055em] text-white max-[560px]:text-[clamp(2rem,9vw,2.8rem)]">
-                Your creativity deserves the <em className="font-display font-normal text-[#b0ecfb]">right brands.</em>
+                Your brand deserves the <em className="font-display font-normal text-[#b0ecfb]">right creative partners.</em>
               </h2>
               <p className="mb-7 mt-5 max-w-[39rem] text-[.83rem] leading-[1.9] text-white/75">
-                We partner with discerning storytellers, beauty aesthetes, and lifestyle filmmakers. No unpaid speculative briefs—just thoughtful collaborations, creative autonomy, and fair compensation.
+                We connect ambitious brands with influential voices, creative storytellers, and content creators who turn attention into meaningful engagement.
               </p>
               <div className="mb-8 grid grid-cols-3 gap-4 max-[560px]:grid-cols-1 max-[560px]:gap-3">
                 {[
-                  ['✧', 'Meaningful brands', 'Work with forward-thinking labels.'],
-                  ['◈', 'Creative freedom', 'Bring your own voice and point of view.'],
-                  ['↗', 'Scaled growth', 'Build partnerships that grow with you.'],
+                  ['✧', 'Curated Creators', 'Find influencers who genuinely align with your brand.'],
+                  ['◈', 'Authentic Campaigns', 'Build meaningful collaborations that audiences connect with.'],
+                  ['↗', 'Measurable Impact', 'Turn creator partnerships into measurable brand growth.Build partnerships that grow with you.'],
                 ].map(([icon, title, description]) => (
                   <article className="rounded-lg border border-white/15 bg-white/[.07] p-4" key={title}>
                     <span className="text-lg text-[#e2c375]" aria-hidden="true">{icon}</span>
@@ -319,7 +343,7 @@ function HomePage() {
                 ))}
               </div>
               <a className="inline-flex min-h-12 items-center gap-3 rounded-lg bg-white px-5 py-3 text-[.72rem] font-bold text-[#09525e] transition hover:-translate-y-0.5 hover:bg-[#e9f7f0]" href="#contact">
-                Join our creator network <span aria-hidden="true">↗</span>
+                Let's grow your brand <span aria-hidden="true">↗</span>
               </a>
             </div>
             <div className="col-span-5 rounded-2xl border border-white/15 bg-white/[.08] p-6 shadow-[0_22px_55px_rgb(0_0_0_/_10%)] backdrop-blur-sm max-[800px]:col-span-1 max-[560px]:p-4">
@@ -503,7 +527,7 @@ function HomePage() {
                 </details>
               ))}
             </div>
-            <div className="col-span-12 flex flex-col gap-3 max-[800px]:col-span-12">
+            <div className="col-span-12 flex flex-col gap-3 max-[800px]:col-span-1">
               <form className="mt-2 grid gap-4 rounded-xl bg-white p-5 shadow-sm max-[560px]:p-4" onSubmit={handleQuestionSubmit}>
                 <div>
                   <h3 className="m-0 text-[.85rem] font-bold text-[#223343]">Something On Your Mind?</h3>

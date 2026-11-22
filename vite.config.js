@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    allowedHosts: true
+    host: true,
+    allowedHosts: ["creatorlensstudio.com", "www.creatorlensstudio.com", "creatorlens-studio-live.vercel.app"],
   }
 })

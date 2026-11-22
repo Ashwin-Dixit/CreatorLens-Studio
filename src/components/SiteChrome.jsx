@@ -19,8 +19,8 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-20 border-b border-[#c4c6cc]/15 bg-[#eefdf6]/[.88] shadow-[0_1px_8px_rgb(0_0_0_/_4%)] backdrop-blur-sm max-[800px]:h-[4.5rem]">
       <div className="relative mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-8 px-6 lg:px-12 max-[560px]:px-4">
-        <Link className="flex items-center gap-3 whitespace-nowrap text-[#0c1e2d] no-underline max-[560px]:gap-2" to="/" onClick={closeMenu} aria-label="Studio Novo Atelier home">
-          <img src={stitchImages.logo} alt="" className="h-9 w-9 rounded-lg object-contain max-[560px]:h-8 max-[560px]:w-8" />
+        <Link className="flex items-center gap-3 whitespace-nowrap text-[#0c1e2d] no-underline max-[560px]:gap-2" to="/" onClick={closeMenu} aria-label="creatorlens home">
+          <img src="./images/creatorlens logo2.png" alt="" className="h-9 w-9 rounded-lg object-contain max-[560px]:h-8 max-[560px]:w-8" />
           <span className="flex flex-col leading-none">
             <strong className="text-[.83rem] font-bold tracking-[.04em] max-[560px]:text-[.74rem]">CreatorLens</strong>
             <i className="mt-1 font-display text-[.62rem] font-normal lowercase tracking-[.12em] text-[#286673]">Studio</i>
@@ -62,9 +62,13 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12 max-[560px]:px-4">
         <div className="mb-12 grid grid-cols-[1.4fr_.8fr_.8fr_1.1fr] gap-10 max-[1050px]:grid-cols-[1.2fr_.8fr_.8fr] max-[1050px]:gap-8 max-[800px]:grid-cols-2 max-[800px]:gap-8 max-[560px]:gap-x-5 max-[560px]:gap-y-8">
           <div className="max-[560px]:col-span-full">
-            <Link className="flex items-baseline gap-2 text-[#0c1e2d] no-underline" to="/">
-              <span className="text-base font-bold tracking-[.08em]">CreatorLens</span>
-              <i className="font-display text-lg font-normal lowercase text-[#286673]">Studio</i>
+            
+            <Link className="flex items-center gap-3 text-[#0c1e2d] no-underline" to="/">
+              <img src="./images/creatorlens logo.png" alt="CreatorLens" className="h-15 w-15 rounded-lg object-contain max-[560px]:h-12 max-[560px]:w-12" />
+              <span className="flex flex-col gap-0 leading-none text-base font-bold tracking-[.08em]">
+                CreatorLens
+                <i className="font-display text-sm font-normal lowercase text-[#286673]">Studio</i>
+                </span>
             </Link>
             <p className="my-4 max-w-80 text-[.67rem] leading-[1.8] text-[#63716a]">
               High-touch editorial craft fused with performance-driven marketing for cultural icons and forward-thinking enterprises.
